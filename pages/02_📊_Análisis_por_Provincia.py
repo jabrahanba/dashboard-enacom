@@ -16,6 +16,7 @@ st.set_page_config(
      layout="wide")
 
 st.title('📊📊Análisis por Provincia')
+st.markdown('A continuación se presentan los gráficos relativos al acceso a internet por provincias en Argentina')
 
 
 #importar dataframe:

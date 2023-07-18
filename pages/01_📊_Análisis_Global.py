@@ -15,6 +15,7 @@ st.set_page_config(
      layout="wide")
 
 st.title('📊Análisis Global')
+st.markdown('A continuación se presentan los gráficos relativos al acceso a internet a nivel global en Argentina')
 
 #importar dataframe:
 dataGlobal = pd.read_csv('dataGlobal.csv')

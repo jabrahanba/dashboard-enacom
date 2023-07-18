@@ -15,6 +15,7 @@ st.set_page_config(
      layout="wide")
 
 st.title('📊Análisis por Localidad')
+st.markdown('A continuación se presentan los gráficos relativos al acceso a internet por localidades en Argentina')
 
 #importar dataframe:
 
