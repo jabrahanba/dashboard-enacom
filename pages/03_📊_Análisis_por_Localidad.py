@@ -17,7 +17,7 @@ st.set_page_config(
 
 #importar dataframe:
 
-dataLocalidad = pd.read_csv('data\dataLocalidad.csv')
+dataLocalidad = pd.read_csv('dataLocalidad.csv')
 
 #1er gráfico:
 st.markdown('***')
@@ -32,7 +32,7 @@ if st.checkbox('Quitar CABA para visualizar mejor las localidades en Provincias 
 else:
     df1 = dataLocalidad[['provincia','localidad','adsl','cableModem','dialUp','fibraOptica', 'satelital', 'wimax', 'wireless', 'otros_tec','latitud','longitud']]
 
-with open('data/ProvinciasArgentina.geojson') as f:
+with open('ProvinciasArgentina.geojson') as f:
     data_provincias = json.load(f)
 fig = go.Figure()
 # Agregar capa de las divisiones de provincias
@@ -77,7 +77,7 @@ if st.checkbox('Quitar CABA para visualizar mejor las localidades en Provincias'
     df2 = df2[df2['localidad'] != 'Palermo'].reset_index()
 else:
     df2 = dataLocalidad[['provincia','localidad','de0a9Mbps','de10a20Mbps','de21a49Mbps','de50a99Mbps','de100a199Mbps','de200a499Mbps','de500a1024Mbps','otros','latitud','longitud']]
-with open('data/ProvinciasArgentina.geojson') as f:
+with open('ProvinciasArgentina.geojson') as f:
     data_provincias = json.load(f)
 fig = go.Figure()
 # Agregar capa de las divisiones de provincias

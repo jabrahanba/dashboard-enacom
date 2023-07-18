@@ -11,7 +11,7 @@ import plotly.io as pio
 # Setup web page
 st.set_page_config(
      page_title="📊Análisis Global",
-     page_icon= "src\internet.png",
+     page_icon= "internet.png",
      layout="wide")
 
 

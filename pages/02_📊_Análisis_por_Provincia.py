@@ -12,12 +12,12 @@ import plotly.io as pio
 # Setup web page
 st.set_page_config(
      page_title="📊Análisis por Provincia",
-     page_icon= "src\internet.png",
+     page_icon= "internet.png",
      layout="wide")
 
 
 #importar dataframe:
-dataProvincia = pd.read_csv('data\dataProvincia.csv')
+dataProvincia = pd.read_csv('dataProvincia.csv')
 
 #Seleccionar tema
 dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
@@ -220,7 +220,7 @@ fig.update_layout(
     showlegend=True
 )
 st.plotly_chart(fig)
-provincias_regiones = pd.read_excel('data\provincias_localidades_coorde.xlsx', sheet_name='Provincias')
+provincias_regiones = pd.read_excel('provincias_localidades_coorde.xlsx', sheet_name='Provincias')
 if st.checkbox('Mostrar Provincias por Region'):
     st.dataframe(provincias_regiones[['Region', 'Provincia']].sort_values('Region'))
 
@@ -243,7 +243,7 @@ df_mapa['provincia']=df_mapa['provincia'].replace({
     'Neuquén':'NeuquÃ©n',
     'Río Negro':'RÃ­o Negro'
     })
-with open('data\ProvinciasArgentina.geojson') as f:   
+with open('ProvinciasArgentina.geojson') as f:   
     data = json.load(f)
 
 fig = px.choropleth_mapbox(df_mapa, geojson=data,featureidkey='properties.nombre', locations='provincia', color=dim,

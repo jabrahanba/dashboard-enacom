@@ -3,7 +3,7 @@ import streamlit as st
 # Setup web page
 st.set_page_config(
      page_title="Data Analytics ENACOM 🌐🇦🇷",
-     page_icon= "src\internet.png",
+     page_icon= "internet.png",
      layout="wide")
 
 
