@@ -36,4 +36,4 @@ st.markdown("Datos demográficos: INDEC(Instituto Nacional de Estadística y Cen
 
 
 ## SIDEBAR:
-st.sidebar.markdown('Análisis realizados:')
+st.sidebar.markdown('Análisis realizados ⬆️')
