@@ -16,7 +16,7 @@ st.set_page_config(
 
 
 #importar dataframe:
-dataGlobal = pd.read_csv('dashboard-enacom/data/dataGlobal.csv')
+dataGlobal = pd.read_csv('data/dataGlobal.csv')
 
 #1era prueba mostrar el df:
 if st.checkbox('Mostrar el dataframe Global'):
