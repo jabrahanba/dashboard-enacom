@@ -2,9 +2,10 @@ import streamlit as st
 
 # Setup web page
 st.set_page_config(
-     page_title="🎯KPI",
+     page_title="🎯Hallazgos y KPI",
      page_icon= "internet.png",
      layout="wide")
 
-st.title('🎯KPI')
+st.title('🎯Hallazgos y KPI')
 st.markdown('***')
+
