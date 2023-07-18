@@ -17,7 +17,7 @@ st.set_page_config(
 
 #importar dataframe:
 
-dataLocalidad = pd.read_csv('data\dataLocalidad.csv')
+dataLocalidad = pd.read_csv('..\data\dataLocalidad.csv')
 
 #1er gráfico:
 st.markdown('***')
