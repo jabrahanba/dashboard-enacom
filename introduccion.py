@@ -10,9 +10,9 @@ st.set_page_config(
 st.title('Análisis de Datos de Acceso a Internet en Argentina 🌐🇦🇷')
 
 st.markdown('***')
-st.markdown('# Informe Analítico de Datos Abiertos del Servicio de Internet en Argentina 📊')
+st.subheader('Informe Analítico de Datos Abiertos del Servicio de Internet en Argentina 📊')
 
-st.markdown("### Tecnologías de Acceso a Internet 🖥️📡")
+st.subheader("Tecnologías de Acceso a Internet 🖥️📡")
 st.markdown("Internet es una red de redes de computadoras que se conectan mediante diferentes medios, como líneas telefónicas, fibras ópticas, cables submarinos y enlaces por satélite. Los usuarios se conectan a través de proveedores de acceso que ofrecen servicios de conexión, ya sea mediante comunicaciones telefónicas (dial-up), banda ancha (ADSL, cablemódem, conexión inalámbrica o satelital) o enlaces punto a punto.")
 st.markdown("Existen varias tecnologías utilizadas para el acceso a internet en Argentina:")
 
