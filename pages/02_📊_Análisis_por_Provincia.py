@@ -15,12 +15,15 @@ st.set_page_config(
      page_icon= "internet.png",
      layout="wide")
 
+st.title('📊📊Análisis por Provincia')
+
 
 #importar dataframe:
 dataProvincia = pd.read_csv('dataProvincia.csv')
 
 #Seleccionar tema
-dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
+#dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
+dim='plotly'
 #Seleccionar trimestre
 trim = st.radio('Seleccionar el trimestre:',(1, 2, 3, 4), horizontal=True)
 st.write('Se recomienda utilizar el 3er trimestre para poder comparar propiamente cada año, pues los datos para el 2022 solo están hasta el 3er trimestre')

@@ -14,30 +14,16 @@ st.set_page_config(
      page_icon= "internet.png",
      layout="wide")
 
+st.title('📊Análisis Global')
 
 #importar dataframe:
 dataGlobal = pd.read_csv('dataGlobal.csv')
 
-#1era prueba mostrar el df:
-if st.checkbox('Mostrar el dataframe Global'):
-    st.dataframe(dataGlobal)
-
-if st.checkbox('Vista de datos Head o Tail'):
-    if st.button('Mostrar Head'):
-        st.write(dataGlobal.head())
-    if st.button('Mostrar Tail'):
-        st.write(dataGlobal.tail())
-
-dim = st.radio('Dimensión a mostrar:',('Filas','Columnas'), horizontal=True)
-if dim == 'Filas':
-    st.write(f'Cantidad de filas: {dataGlobal.shape[0]}')
-else:
-    st.write(f'Cantidad de columnas: {dataGlobal.shape[1]}')
-
 #1er gráfico:
 st.markdown('***')
 #Seleccionar el tema:
-dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
+#dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
+dim = 'plotly'
 st.markdown('### Ingreso global por años 📶')
 data = dataGlobal.groupby('anio')['ingresos'].sum().reset_index()
 fig = px.bar(data, x='anio', y='ingresos', template=dim)
