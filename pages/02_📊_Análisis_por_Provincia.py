@@ -17,7 +17,7 @@ st.set_page_config(
 
 
 #importar dataframe:
-dataProvincia = pd.read_csv('..\data\dataProvincia.csv')
+dataProvincia = pd.read_csv('data\dataProvincia.csv')
 
 #Seleccionar tema
 dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
@@ -220,7 +220,7 @@ fig.update_layout(
     showlegend=True
 )
 st.plotly_chart(fig)
-provincias_regiones = pd.read_excel('..\data\provincias_localidades_coorde.xlsx', sheet_name='Provincias')
+provincias_regiones = pd.read_excel('data\provincias_localidades_coorde.xlsx', sheet_name='Provincias')
 if st.checkbox('Mostrar Provincias por Region'):
     st.dataframe(provincias_regiones[['Region', 'Provincia']].sort_values('Region'))
 
