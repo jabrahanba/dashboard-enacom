@@ -237,13 +237,13 @@ df_mapa = df_region.copy()
 df_mapa['provincia']=df_mapa['provincia'].replace({
     'Santiago Del Estero':'Santiago del Estero', 
     'Tierra Del Fuego - Antártida E Islas Del Atlántico Sur': 'Tierra del Fuego',
-    'Ciudad De Buenos Aires':'Capital Federal',
-    'Tucumán':'TucumÃ¡n',
-    'Córdoba':'CÃ³rdoba',
-    'Entre Ríos':'Entre RÃ­os',
-    'Neuquén':'NeuquÃ©n',
-    'Río Negro':'RÃ­o Negro'
-    })
+    'Ciudad De Buenos Aires':'Capital Federal'})
+    #'Tucumán':'TucumÃ¡n',
+    #'Córdoba':'CÃ³rdoba',
+    #'Entre Ríos':'Entre RÃ­os',
+    #'Neuquén':'NeuquÃ©n',
+    #'Río Negro':'RÃ­o Negro'
+    #})
 with open('ProvinciasArgentina.geojson') as f:   
     data = json.load(f)
 
