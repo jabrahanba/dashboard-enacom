@@ -34,3 +34,6 @@ Para este estudio, se consideran los siguientes indicadores clave de rendimiento
 
 ¡El acceso a internet es un factor fundamental para el desarrollo de la sociedad y la economía en Argentina! 📈🌍👨‍💻
 """)
+
+st.markdown("### Recomendación:")
+st.markdown("Realizar un análisis de la infraestructura tecnológica en las regiones con el fin de establecer expectativas de crecimiento.")
