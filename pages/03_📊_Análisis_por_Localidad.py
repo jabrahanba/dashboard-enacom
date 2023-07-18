@@ -14,6 +14,7 @@ st.set_page_config(
      page_icon= "src\internet.png",
      layout="wide")
 
+st.title('📊Análisis por Localidad')
 
 #importar dataframe:
 
