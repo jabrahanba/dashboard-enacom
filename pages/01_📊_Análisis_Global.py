@@ -74,6 +74,52 @@ fig.update_xaxes(autorange="reversed")
 st.plotly_chart(fig)
 
 
-#ejemplo
-if st.checkbox('Mostrar texto'):
-    st.write('Hola')
+# grafico 4
+st.markdown('***')
+st.markdown('### Gráfico de población proyectada por grupo etario 📈')
+df4 = pd.read_excel('provincias_anio_edad.xlsx', sheet_name='pais-anio-edad')
+df4 = df4[['Anio', 'rango_0_a_9', 'rango_10_a_19', 'rango_20_a_29', 'rango_30_a_49', 'rango_mayor_a_50', 'total_rangos']]
+rangos = ['rango_0_a_9', 'rango_10_a_19', 'rango_20_a_29', 'rango_30_a_49', 'rango_mayor_a_50','total_rangos']
+# Crear subplots
+fig = make_subplots(rows=1, cols=1)
+traces = []
+for r in rangos:
+    anio = df4['Anio']
+    rango = df4[r]
+    trace = go.Scatter(x=anio, y=rango, name=r)
+    traces.append(trace)
+
+for trace in traces:
+    fig.add_trace(trace)
+
+fig.update_layout(
+    xaxis=dict(title='Año', tickangle=90),
+    yaxis=dict(title='Personas'),
+    legend=dict(orientation='h', x=0, y=-0.2),
+    showlegend=True
+)
+
+buttons = []
+for i, r in enumerate(rangos):
+    visible = [False] * len(traces)
+    visible[i] = True
+
+    button = dict(
+        label=r,
+        method='update',
+        args=[{'visible': visible}, {'title': f'Grupo Etario: {r}'}]
+    )
+    buttons.append(button)
+fig.update_layout(
+    updatemenus=[dict(
+        type='buttons',
+        buttons=buttons,
+        active=0,
+        direction='down',
+        x=0.99,
+        y=0.5
+    )]
+)
+st.plotly_chart(fig)
+if st.checkbox('Mostrar Dataframe'):
+    st.dataframe(df4)

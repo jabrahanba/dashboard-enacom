@@ -23,10 +23,11 @@ dataProvincia = pd.read_csv('dataProvincia.csv')
 dim = st.radio('Seleccionar tema:',('plotly', 'plotly_white', 'plotly_dark', 'ggplot2', 'seaborn', 'simple_white', 'none'), horizontal=True)
 #Seleccionar trimestre
 trim = st.radio('Seleccionar el trimestre:',(1, 2, 3, 4), horizontal=True)
+st.write('Se recomienda utilizar el 3er trimestre para poder comparar propiamente cada año, pues los datos para el 2022 solo están hasta el 3er trimestre')
+
 
 #1er gráfico:
 st.markdown('***')
-st.write('Se recomienda utilizar el 3er trimestre para poder comparar propiamente cada año, pues los datos para el 2022 solo están hasta el 3er trimestre')
 st.markdown('### Cantidad de accesos Banda Ancha Fija y Dial-Up 📶')
 df1 = dataProvincia[['anio','trimestre','provincia','region','bandaAnchaFija','dialUp','total_ba_du']]
 lista_regiones = ['Provincia de Buenos Aires', 'Norte Grande Argentino', 'Patagonia', 'Centro', 'Nuevo Cuyo']
@@ -281,3 +282,32 @@ fig.update_layout(
     showlegend=True
 )
 st.plotly_chart(fig)
+
+#7mo gráfico:
+st.markdown('***')
+st.markdown('### Gráfico de población proyectada por grupo etario - Provincias 📈')
+grupo_etario = st.radio('Selecciona el grupo etario', ('rango_0_a_9','rango_10_a_19','rango_20_a_29','rango_30_a_49','rango_mayor_a_50','total_rangos'), horizontal=True)
+df7 = pd.read_excel('provincias_anio_edad.xlsx', sheet_name='provincias-anio-edad')
+df7 = df7[['Anio','Provincia','rango_0_a_9','rango_10_a_19','rango_20_a_29','rango_30_a_49','rango_mayor_a_50','total_rangos']]
+lista_regiones = st.multiselect('Selecciona la provincia o provincias a visualizar:', ('Buenos Aires', 'CABA', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'))
+fig = make_subplots(rows=1, cols=1)
+traces = []
+df_filtered = df7.copy()  # Crear una copia del DataFrame original
+for r in lista_regiones:
+    df_region = df_filtered[df_filtered['Provincia'] == r]  # Filtrar la copia en lugar del DataFrame original
+    anio = df_region['Anio']
+    edad = df_region[grupo_etario]
+    trace = go.Scatter(x=anio, y=edad, name=r)
+    traces.append(trace)
+for trace in traces:
+    fig.add_trace(trace)
+fig.update_layout(
+    xaxis=dict(title='Año', tickangle=90),
+    yaxis=dict(title='Cantidad de personas en el grupo etario'),
+    legend=dict(orientation='h', x=0, y=-0.2),
+    showlegend=True
+)
+st.plotly_chart(fig)
+
+if st.checkbox('Mostrar dataframe:'):
+    st.dataframe(df7)
