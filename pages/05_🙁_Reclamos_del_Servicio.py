@@ -8,6 +8,8 @@ st.set_page_config(
      layout="wide")
 
 st.title('🙁Reclamos del Servicio')
+st.markdown('A continuación se presentan los reclamos por prestación de servicio de Internet.')
+
 st.markdown('***')
 
 total_tipo = pd.read_excel('DENUN-Y-RECLA-12878.xlsx', sheet_name='Total por Tipo', index_col=False)

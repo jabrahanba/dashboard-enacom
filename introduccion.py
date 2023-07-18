@@ -29,6 +29,10 @@ st.markdown("- **Fibra Óptica**: tecnología que utiliza cables de fibra óptic
 st.markdown("- **Inalámbrica (Wireless)**: conexiones realizadas sin cables, clasificadas como fijas o móviles según la tecnología utilizada en la red. Los servicios de banda ancha inalámbrica fija más comunes son WiFi y WiMax, mientras que los servicios de banda ancha inalámbrica móvil, como el 3G, se obtienen a través de compañías de telefonía móvil y otros proveedores.")
 st.markdown("- **Satelital**: conexiones que se realizan mediante un satélite alquilado por el proveedor de servicios de internet (ISP). El usuario realiza la conexión utilizando una antena instalada en su domicilio proporcionada por el ISP.")
 
+st.subheader("Fuentes de información:")
+st.markdown("Datos relacionados a Acceso de internet en Argentina: Datos Abiertos ENACOM(Ente Nacional de Comunicaciones): https://datosabiertos.enacom.gob.ar/")
+st.markdown("Datos del Contexto Global: informe 'El estado de digitalización de América Latina frente a la pandemia del COVID 19, disponible en: https://scioteca.caf.com/bitstream/handle/123456789/1540/El_estado_de_la_digitalizacion_de_America_Latina_frente_a_la_pandemia_del_COVID-19.pdf?sequence=1&isAllowed=y")
+st.markdown("Datos demográficos: INDEC(Instituto Nacional de Estadística y Censos)  https://www.indec.gob.ar/")
 
 
 ## SIDEBAR:
