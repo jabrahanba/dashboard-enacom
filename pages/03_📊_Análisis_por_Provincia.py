@@ -220,7 +220,7 @@ for trace in traces:
     fig.add_trace(trace)
 fig.update_layout(
     xaxis=dict(title='Año', tickangle=90),
-    yaxis=dict(title='Velocidad Media de Descarga'),
+    yaxis=dict(title='Velocidad Media de Descarga Mbps'),
     legend=dict(orientation='h', x=0, y=-0.2),
     showlegend=True
 )

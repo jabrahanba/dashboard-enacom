@@ -30,7 +30,7 @@ data = dataGlobal.groupby('anio')['ingresos'].sum().reset_index()
 fig = px.bar(data, x='anio', y='ingresos', template=dim)
 fig.update_layout(
     xaxis_title='Año',
-    yaxis_title='Ingresos'
+    yaxis_title='Ingresos (ARS)'
 )
 st.plotly_chart(fig)
 
@@ -43,7 +43,7 @@ data = pd.DataFrame({'anio_trimestre': anio_trimestre, 'velocidad': velocidad})
 fig = px.line(data, x='anio_trimestre', y='velocidad', template=dim)
 fig.update_layout(
     xaxis_title='Año - trimestre',
-    yaxis_title='Velocidad media de descarga'
+    yaxis_title='Velocidad media de descarga (Mbps)'
 )
 st.plotly_chart(fig)
 
@@ -56,7 +56,7 @@ for year in sorted(set(dataGlobal['anio'])):
     data_by_year.append(data_year)
 fig = px.box(pd.DataFrame(data_by_year), x=dataGlobal['anio'], y=dataGlobal['velocidadMediaDesc'], template=dim)
 fig.update_xaxes(title='Año', type='category')
-fig.update_yaxes(title='Velocidad Media')
+fig.update_yaxes(title='Velocidad Media Mbps')
 fig.update_xaxes(autorange="reversed")
 st.plotly_chart(fig)
 
